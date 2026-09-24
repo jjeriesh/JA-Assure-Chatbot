@@ -1,0 +1,43 @@
+# 🤖 JA Assure AI Chatbot
+
+An AI-powered chatbot built using Python, Flask and Anthropic Claude.
+
+The project provides a conversational AI interface and includes
+an email-report tool that allows the AI agent to send reports
+or messages through email.
+
+---
+
+## 🚀 Features
+
+- AI-powered chatbot
+- Anthropic Claude integration
+- Web-based chat interface
+- AI Agent architecture
+- Tool/function calling
+- Email report generation
+- SMTP email integration
+- Environment variable based API security
+
+---
+
+## 🏗️ Architecture
+
+```text
+User
+ |
+ v
+Chat Interface
+ |
+ v
+Flask API
+ |
+ v
+AI Agent
+ |
+ +------> Anthropic Claude
+ |
+ +------> Send Report Email
+ |
+ v
+Response

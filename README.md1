@@ -41,3 +41,84 @@ AI Agent
  |
  v
 Response
+📁 Project Structure
+JA-Assure-Chatbot/
+│
+├── app.py
+├── agent.py
+├── email_tool.py
+├── config.py
+├── requirements.txt
+├── .env.example
+├── .gitignore
+└── README.md
+⚙️ Installation
+1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/JA-Assure-Chatbot.git
+2. Enter the project
+cd JA-Assure-Chatbot
+3. Create virtual environment
+python3 -m venv venv
+4. Activate virtual environment
+
+Linux / macOS:
+
+source venv/bin/activate
+
+Windows:
+
+venv\Scripts\activate
+5. Install dependencies
+pip install -r requirements.txt
+🔐 Environment Variables
+
+Create a .env file.
+
+ANTHROPIC_API_KEY=your_api_key
+
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+
+EMAIL_USERNAME=your_email@gmail.com
+EMAIL_PASSWORD=your_app_password
+▶️ Run the application
+python3 app.py
+
+Open:
+
+http://127.0.0.1:5000
+💬 Example
+
+User:
+
+Hello
+
+AI:
+
+Hello! How can I help you today?
+
+User:
+
+Send this report to example@gmail.com
+
+The AI agent can call the email tool and send the requested
+information.
+
+🛡️ Security
+
+Never upload API keys or passwords to GitHub.
+
+Use:
+
+.env
+
+for secrets and keep it inside .gitignore.
+
+🧰 Technologies
+Python
+Flask
+Anthropic Claude API
+SMTP
+HTML
+CSS
+JavaScript

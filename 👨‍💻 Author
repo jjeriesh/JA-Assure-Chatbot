@@ -1,0 +1,53 @@
+
+---
+
+# 📌 How your n8n workflow maps to this project
+
+Your screenshot:
+
+| n8n | GitHub/Python version |
+|---|---|
+| **When chat message received** | Flask `/chat` endpoint |
+| **AI Agent** | `run_agent()` |
+| **Anthropic Chat Model** | Anthropic Python SDK |
+| **Tool** | `send_report_email()` |
+| **Chat UI** | HTML + CSS + JavaScript |
+| **Credentials** | `.env` |
+
+So the architecture becomes:
+
+```text
+             ┌─────────────────────┐
+             │      USER           │
+             └──────────┬──────────┘
+                        │
+                        ▼
+             ┌─────────────────────┐
+             │    CHAT INTERFACE   │
+             │   HTML/CSS/JS       │
+             └──────────┬──────────┘
+                        │
+                        ▼
+             ┌─────────────────────┐
+             │       FLASK         │
+             │      /chat          │
+             └──────────┬──────────┘
+                        │
+                        ▼
+             ┌─────────────────────┐
+             │     AI AGENT        │
+             │     agent.py        │
+             └───────┬─────┬───────┘
+                     │     │
+             ┌───────▼─┐   │
+             │ Claude  │   │
+             │   API   │   │
+             └─────────┘   │
+                           ▼
+                 ┌─────────────────┐
+                 │ EMAIL TOOL      │
+                 │ email_tool.py   │
+                 └────────┬────────┘
+                          │
+                          ▼
+                    📧 EMAIL
